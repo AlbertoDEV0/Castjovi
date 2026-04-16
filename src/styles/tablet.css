@@ -1,0 +1,58 @@
+/* Optimizaciones para Tablets */
+
+/* Tablets en orientación landscape (1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  :root {
+    --font-size: 18px; /* Tamaño base más grande para tablets */
+  }
+  
+  /* Aumentar el tamaño de elementos interactivos para touch */
+  button,
+  a,
+  input,
+  textarea {
+    min-height: 48px; /* Recomendación de Google Material para touch targets */
+  }
+}
+
+/* Tablets en orientación portrait (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --font-size: 17px;
+  }
+  
+  /* Ajustar el layout para orientación vertical */
+  .tablet-portrait-stack {
+    flex-direction: column !important;
+  }
+}
+
+/* Optimización para pantallas táctiles */
+@media (hover: none) and (pointer: coarse) {
+  /* Aumentar áreas de toque */
+  button,
+  a {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  /* Mejorar feedback visual en taps */
+  button:active,
+  a:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Asegurar que el contenido no se desborde en tablets */
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  /* Mejorar espaciado en grids */
+  .grid {
+    gap: 2rem;
+  }
+}
